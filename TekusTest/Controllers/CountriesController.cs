@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TekusTest.Models;
+using TekusTest.Core;
 
 namespace TekusTest.Controllers
 {
     public class CountriesController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CountriesController()
+        public CountriesController(IUnitOfWork unitOfWork)
         {
-            _context = new ApplicationDbContext();
+            _unitOfWork = unitOfWork;
         }
         // GET: Countries
         public ActionResult Index()
@@ -24,7 +24,7 @@ namespace TekusTest.Controllers
 
         private void fillCountriesServices()
         {
-            var countries = _context.Paises.ToList();
+            var countries = _unitOfWork.Countries.getCountries();
             List<SelectListItem> countriesList = new List<SelectListItem>();
             countriesList.Clear();
 

@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TekusTest.Models;
+using TekusTest.Core;
 
 namespace TekusTest.Controllers
 {
     public class ServicesController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public ServicesController()
+        public ServicesController(IUnitOfWork unitOfWork)
         {
-            _context = new ApplicationDbContext();
+            _unitOfWork = unitOfWork;
         }
         // GET: Services
         public ActionResult Index()
@@ -24,8 +24,8 @@ namespace TekusTest.Controllers
 
         private void fillClientsServices()
         {
-            var cliente = _context.Clientes.ToList();
-            var servicio = _context.Servicios.ToList();
+            var cliente = _unitOfWork.Clients.getClients();
+            var servicio = _unitOfWork.Services.getServices();
             List<SelectListItem> clientList = new List<SelectListItem>();
             List<SelectListItem> serviceList = new List<SelectListItem>();
             clientList.Clear();
