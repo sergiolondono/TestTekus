@@ -34,5 +34,12 @@ namespace TekusTest.Repositories
         {
             _context.PaisesPorServicio.Add(paisServicio);
         }
+
+        public IEnumerable<ResumeServicesByCountry> getServicesByCountry()
+        {
+           return  _context.Database.SqlQuery<ResumeServicesByCountry>("select count(ps.Id) Subtotal, p.Nombre from PaisesPorServicio ps inner join " +
+               "Paises p on ps.IdPais = p.Id group by IdPais, p.Nombre order by IdPais").ToList();
+        }
+
     }
 }

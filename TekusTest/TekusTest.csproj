@@ -199,6 +199,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ServiceCountryController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\SummaryController.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IClientRepository.cs" />
     <Compile Include="Core\Repositories\ICountryRepository.cs" />
@@ -231,6 +232,7 @@
     <Compile Include="Models\PaisesPorServicio.cs">
       <DependentUpon>ApplicationDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResumeServicesByCountry.cs" />
     <Compile Include="Models\Servicios.cs">
       <DependentUpon>ApplicationDbContext.tt</DependentUpon>
     </Compile>
@@ -537,6 +539,7 @@
     <Content Include="Views\Countries\Index.cshtml" />
     <Content Include="Views\Services\Index.cshtml" />
     <Content Include="Views\ServiceCountry\Index.cshtml" />
+    <Content Include="Views\Summary\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

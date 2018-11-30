@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<fieldset>
+    <legend>Resumen</legend>
+
+    <h3>Cantidad de clientes: @ViewBag.Clientes</h3>
+    <h3>Cantidad de servicios: @ViewBag.Servicios</h3>
+
+    <h3>Servicios por País</h3>
+    <ul>
+        @foreach (var item in ViewBag.ServiciosxPaises)
+        {
+            <li>@item.Nombre :  @item.Subtotal</li>
+        }
+    </ul>
+</fieldset>
+

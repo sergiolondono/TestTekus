@@ -12,6 +12,7 @@ namespace TekusTest.Core.Repositories
         IEnumerable<PaisesPorServicio> getCountriesServices();
         PaisesPorServicio getCountryServcieById(int id);
         IEnumerable<PaisesPorServicio> getCountryServiceExist(int? idServicio, int? idPais);
+        IEnumerable<ResumeServicesByCountry> getServicesByCountry();
         void Create(PaisesPorServicio paisServicio);
     }
 }
