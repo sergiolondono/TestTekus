@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1f3b9781205747d9be972aa2532dd845" Name="Diagram1">
+        <EntityTypeShape EntityType="DbModel.Clientes" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Servicios" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="DbModel.FK__Servicios__IdCli__302F0D3D" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DbModel.Paises" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="DbModel.PaisesPorServicio" Width="1.5" PointX="5.25" PointY="1" />
+        <AssociationConnector Association="DbModel.FK__PaisesPor__IdPai__3AAC9BB0" />
+        <AssociationConnector Association="DbModel.FK__PaisesPor__IdSer__3BA0BFE9" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

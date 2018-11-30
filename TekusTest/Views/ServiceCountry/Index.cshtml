@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/Views/ServiceCountry.js"></script>
+
+<div class="container">
+    <fieldset>
+        <legend>Servicios/Países</legend>
+
+        <a href="#divListCounrtyService" data-toggle="collapse" class="btn active">
+            Consultar <i class="glyphicon glyphicon-chevron-down"></i>
+        </a>
+
+        <div id="divListCounrtyService" class="collapse in">
+            <fieldset>
+                <legend>Consultar</legend>
+                <br />
+                <div id="tableContainer">
+                </div>
+            </fieldset>
+        </div>
+
+        <a href="#divCreateCountryService" data-toggle="collapse" class="btn active">
+            Crear <i class="glyphicon glyphicon-chevron-down"></i>
+        </a>
+        <div id="divCreateCountryService" class="collapse">
+            <fieldset>
+                <legend>Crear</legend>
+
+                <div class="form-group">
+                    @Html.DropDownList("cliente", ViewBag.cliente as List<SelectListItem>,
+                              new { onchange = "loadServices();", @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DropDownList("servicios", new SelectList(string.Empty, "Value", "Text"),
+                            new { @class = "form-control hide" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DropDownList("paises", ViewBag.paises as List<SelectListItem>,
+                            new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <input type="button" name="btnGuardar" id="btnGuardar" onclick="saveCountryService()"
+                           value="Guardar Configuración" class="btn btn-success btn-block" />
+                </div>
+            </fieldset>
+        </div>
+
+    </fieldset>
+</div>
+
+

@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script src="~/Scripts/Views/Client.js"></script>
+
+@*<h2>Clientes</h2>
+
+    <div class="form-group">
+        @Html.DropDownList("cliente", ViewBag.cliente as List<SelectListItem>,
+                            new { style = "width: 200px;", @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.DropDownList("servicios", new SelectList(string.Empty, "Value", "Text"),
+                                    "-- Seleccionar servicio --", new { style = "width:200px", @class = "form-control", onchange = "OnChangeService()" })
+    </div>*@
+
+<div class="container">
+    <fieldset>
+        <legend>Clientes</legend>
+
+        <a href="#divListClient" data-toggle="collapse" class="btn active">
+            Consultar <i class="glyphicon glyphicon-chevron-down"></i>
+        </a>
+
+        <div id="divListClient" class="collapse in">
+            <fieldset>
+                <legend>Consultar</legend>
+                <br />
+                <div id="tableContainer">
+                </div>
+            </fieldset>
+        </div>
+
+        <a href="#divCreateClient" data-toggle="collapse" class="btn active">
+            Crear <i class="glyphicon glyphicon-chevron-down"></i>
+        </a>
+        <div id="divCreateClient" class="collapse">
+            <fieldset>
+                <legend>Crear</legend>
+
+                <div class="form-group">
+                    <input type="text" name="txtNit" id="txtNit" required
+                           placeholder="Nit" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="txtNombre" id="txtNombre" required
+                           placeholder="Nombre" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="txtEmail" id="txtEmail" required
+                           placeholder="Email" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input type="button" name="btnGuardar" id="btnGuardar" onclick="saveClient()"
+                           value="Guardar Cliente" class="btn btn-success btn-block" />
+                </div>
+            </fieldset>
+        </div>
+
+        <a href="#divUpdateClient" data-toggle="collapse" class="btn active">
+            Modificar <i class="glyphicon glyphicon-chevron-down"></i>
+        </a>
+        <div id="divUpdateClient" class="collapse">
+            <fieldset>
+                <legend>Modificar</legend>
+
+                <div class="form-group">
+                    <input type="text" name="txtNitUpdate" id="txtNitUpdate" required
+                           placeholder="Nit" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="txtNombreUpdate" id="txtNombreUpdate" required
+                           placeholder="Nombre" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="txtEmailUpdate" id="txtEmailUpdate" required
+                           placeholder="Email" class="form-control" />
+                </div>
+
+                <div class="form-inline">
+                    <div class="form-group">
+                        <input type="text" name="txtNitClientToUpdate" id="txtNitClientToUpdate" required
+                               placeholder="Nit a modificar" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="button" name="btnUpdateClient" id="btnUpdateClient" onclick="updateClient()"
+                               value="Modificar Cliente" class="btn btn-warning btn-block" />
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+    </fieldset>
+</div>
+
+
